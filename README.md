@@ -1,4 +1,6 @@
 # syscoin-custom-codes
-Personalização SysCoin<br>
-http://syscoin.com.br
-NOVIDADE - será?
+
+
+<h1>SysCoin's Plugin</h1>
+
+<p>Plugin com Functions para Personalização para <a href="http://syscoin.com.br">SysCoin</a></p>
