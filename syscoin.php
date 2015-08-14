@@ -4,7 +4,7 @@
 * Plugin URI: http://syscoin.com.br
 * Description: Códigos de Personalização
 * Version: 1.0
-* Author: Leonardo
+* Author: Leonardo Miranda
 * Author URI: Site
 * License: A "Slug" license name e.g. GPL12
 */
