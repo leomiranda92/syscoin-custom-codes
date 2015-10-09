@@ -76,62 +76,24 @@ if ( isset($current_user) ) {
     echo $current_user->user_login;
 }
 ?></b></p>
-   <p>Caso tenha alguma dúvida, sugestão ou reclamação basta nos enviar uma mensagem através do formulário: </p>
 
-   <style>
-      .suporte input{
-        width: 100%;
-        padding: 5px;
-      }
+   <p>Seja bem-vindo(a) à central de suporte da SysCoin.</p>
+   <p><a href="https://syscoin.zendesk.com/hc/pt-br/requests/new" target="_blank">Abrir Chamado de Suporte</a> | <a href="https://syscoin.zendesk.com/hc/pt-br" target="_blank">Base de Conhecimento</a> | <a href="http://syscoin.com.br/minha-conta/" target="_blank">Financeiro</a></p>
+   <br>
+   <h4>Fale Conosco</h4>
+   <p><b>Email: </b>atendimento@syscoin.com.br</p>
+   <p><b>WhatsApp:</b> (61) 8179-7716 | <b>Tel:</b> (61) 4042-0082</p>
+   <br>
+   <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=162964513799325";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script><div class="fb-like" data-href="https://facebook.com/syscoin.com.br" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
 
-      .suporte textarea{
-        height: 100px;
-        width: 100%;
-        font-weight: normal;
-      }
-      .suporte label{
-        font-weight: bold;
-      }
 
-      .enviar{
-        background-color: #ffcc00;
-        widh:200px;
-        border: 0;
-      }
-
-   </style>
-   <form id="zFormer"  class="suporte" method="post" action="http://www.syscoin.com.br/form/former.php" name="zFormer">
-       <p>
-           <label for="z_name">Seu Nome</label><br>
-           <input type="text" value="<?php
-           global $current_user;
-           if ( isset($current_user) ) {
-               echo $current_user->user_login;
-           }
-           ?>" name="z_name" />
-       </p>
-       <p>
-           <label for="z_requester">Seu Email</label><br>
-           <input type="text" value="<?php
-           global $current_user;
-           if ( isset($current_user) ) {
-               echo $current_user->user_email;
-           }
-           ?>"placeholder="Seu email" name="z_requester" />
-       </p>
-       <p>
-           <label for="z_subject">Assunto </label><br>
-           <input type="text" placeholder="Qual o assunto" name="z_subject" />
-       </p>
-       <p>
-           <label for="z_description">Mensagem:<br>
-           <textarea name="z_description" placeholder="Descreva o máximo de detalhes possível para agilizar seu atendimento. Caso seja necessário informe links da sua loja."></textarea></label>
-
-       </p>
-       <p>
-          <input type="submit" value="Enviar"class="enviar"/>
-       </p>
-       </form>
 
 
 
