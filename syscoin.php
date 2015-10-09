@@ -31,7 +31,7 @@ function custom_ga1() {
 
 
 
-// ESCONDER ABA "AJUDA" NO PAINEL 
+// ESCONDER ABA "AJUDA" NO PAINEL
 
 function hide_help() {
     echo '<style type="text/css">
@@ -64,52 +64,74 @@ add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
 // ADICIONAR WIDGETS PERSONALIZADOS NO DASHBOARD
 
 function wptutsplus_add_dashboard_widgets() {
-    wp_add_dashboard_widget( 'wptutsplus_dashboard_welcome', 'Loja Virtual SysCoin', 'wptutsplus_add_welcome_widget' );
-    wp_add_dashboard_widget( 'wptutsplus_dashboard_links', 'Suporte SysCoin 24h', 'wptutsplus_add_links_widget' );
+    wp_add_dashboard_widget( 'wptutsplus_dashboard_links', 'Suporte ao Cliente', 'wptutsplus_add_links_widget' );
 }
-function wptutsplus_add_welcome_widget(){ ?>
- 
-<img src="http://syscoin.com.br/wp-content/uploads/2014/06/SysCoin_Site.png"/>
-<br>
-<ul>
-<li><a href="#">Meus Tickets</a> | <a href="#">Financeiro</a> | <a href="#">Facebook</a> | <a href="#">Blog SysCoin</a></li>
-</ul>
 
-<p>Você está utilizando o plano <b>SysCoin Express</b></p>
-
-<p>Deseja ter +80 recursos novos em sua loja como email marketing, recuperador de carrinho abandonados, lista de desejos, comparar produtos, sistema de filiados, layout personalizado?<br><br><a href="#">Solicite seu upgrade de plano agora mesmo!</a>
-
-
- 
-<?php }
- 
 function wptutsplus_add_links_widget() { ?>
- 
+  <img src="http://syscoin.com.br/wp-content/uploads/2014/06/SysCoin_Site.png" style="float: right; margin-top: -30px;"/>
+
 <p>Olá, <b><?php
 global $current_user;
 if ( isset($current_user) ) {
     echo $current_user->user_login;
 }
 ?></b></p>
-   <p>Caso tenha alguma dúvida, sugestão ou reclamação basta nos enviar uma mensagem através do formulário:</p>
-<form action="#">
-<label>
-<input placeholder="Seu Nome" id="#" type="text" style="width: 100%;"/>
-</label>
-<label>
-<input placeholder="Seu Email" id="#" type="text" style="width: 100%;"/>
-</label>
-<label>
-<input placeholder="http://sualoja.com.br" id="#" type="text" style="width: 100%;"/>
-</label>
-<label>
-<textarea name="comment" style="width: 100%;" placeholder="Sua mensagem..."></textarea>
-</label>
-<label>
-<input type="submit" value="Enviar"/>
-</label>
+   <p>Caso tenha alguma dúvida, sugestão ou reclamação basta nos enviar uma mensagem através do formulário: </p>
 
-</form>
+   <style>
+      .suporte input{
+        width: 100%;
+        padding: 5px;
+      }
+
+      .suporte textarea{
+        height: 100px;
+        width: 100%;
+        font-weight: normal;
+      }
+      .suporte label{
+        font-weight: bold;
+      }
+
+      .enviar{
+        background-color: #ffcc00;
+        widh:200px;
+        border: 0;
+      }
+
+   </style>
+   <form id="zFormer"  class="suporte" method="post" action="http://www.syscoin.com.br/form/former.php" name="zFormer">
+       <p>
+           <label for="z_name">Seu Nome</label><br>
+           <input type="text" value="<?php
+           global $current_user;
+           if ( isset($current_user) ) {
+               echo $current_user->user_login;
+           }
+           ?>" name="z_name" />
+       </p>
+       <p>
+           <label for="z_requester">Seu Email</label><br>
+           <input type="text" value="<?php
+           global $current_user;
+           if ( isset($current_user) ) {
+               echo $current_user->user_email;
+           }
+           ?>"placeholder="Seu email" name="z_requester" />
+       </p>
+       <p>
+           <label for="z_subject">Assunto </label><br>
+           <input type="text" placeholder="Qual o assunto" name="z_subject" />
+       </p>
+       <p>
+           <label for="z_description">Mensagem:<br>
+           <textarea name="z_description" placeholder="Descreva o máximo de detalhes possível para agilizar seu atendimento. Caso seja necessário informe links da sua loja."></textarea></label>
+
+       </p>
+       <p>
+          <input type="submit" value="Enviar"class="enviar"/>
+       </p>
+       </form>
 
 
 
@@ -121,8 +143,8 @@ add_action( 'wp_dashboard_setup', 'wptutsplus_add_dashboard_widgets' );
 
 function remove_admin_bar_links() {
     global $wp_admin_bar,$current_user;
-   
-    $wp_admin_bar->remove_menu('w3tc');             
+
+    $wp_admin_bar->remove_menu('w3tc');
 
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
@@ -145,4 +167,3 @@ function remove_wplogo_mysites() {
 	}
 }
 add_action( 'wp_before_admin_bar_render', 'remove_wplogo_mysites' );
-
