@@ -50,6 +50,7 @@ function remove_dashboard_widgets() {
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
+  unset($wp_meta_boxes['dashboard']['normal']['core']['yoast_db_widget']);
 	// unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
 	unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
 	unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
@@ -58,6 +59,8 @@ function remove_dashboard_widgets() {
 }
 
 add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
+
+
 
 
 
