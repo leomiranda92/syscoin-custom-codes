@@ -85,7 +85,13 @@ if ( isset($current_user) ) {
 ?></b></p>
 
    <p>Seja bem-vindo(a) à central de suporte da SysCoin.</p>
-   <p><a href="https://syscoin.zendesk.com/hc/pt-br/requests/new" target="_blank">Abrir Chamado de Suporte</a> | <a href="https://syscoin.zendesk.com/hc/pt-br" target="_blank">Base de Conhecimento</a> | <a href="http://syscoin.com.br/minha-conta/" target="_blank">Financeiro</a></p>
+   <p><a href="https://syscoin.zendesk.com/hc/pt-br/requests/new" target="_blank">Abrir Chamado de Suporte</a> | <a href="https://syscoin.zendesk.com/hc/pt-br" target="_blank">Base de Conhecimento</a><br>
+    <a href="http://syscoin.com.br/minha-conta/" target="_blank">Financeiro</a></p>
+    <br>
+    <h4>Gerente de Conta</h4>
+    <p>Seu gerente de conta é o <b>Tiago Tavares</b></p>
+    <p>(61) 9561-1549</p>
+    <p>tiago@syscoin.com.br</p>
    <br>
    <h4>Fale Conosco</h4>
    <p><b>Email: </b>atendimento@syscoin.com.br</p>
@@ -136,3 +142,13 @@ function remove_wplogo_mysites() {
 	}
 }
 add_action( 'wp_before_admin_bar_render', 'remove_wplogo_mysites' );
+
+
+// Disable YOAST nag messages
+add_action('admin_init', 'wpc_disable_yoast_notifications');
+function wpc_disable_yoast_notifications() {
+  if (is_plugin_active('wordpress-seo/wp-seo.php')) {
+    remove_action('admin_notices', array(Yoast_Notification_Center::get(), 'display_notifications'));
+    remove_action('all_admin_notices', array(Yoast_Notification_Center::get(), 'display_notifications'));
+  }
+}
