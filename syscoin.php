@@ -13,21 +13,6 @@
 // GOOGLE ANALYTICS BI
 
 
-add_action('wp_footer', 'custom_ga1');
-
-function custom_ga1() {
-    echo "<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-61110463-6', 'auto');
-  ga('send', 'pageview');
-
-</script>
-";
-}
 
 
 
@@ -85,17 +70,11 @@ if ( isset($current_user) ) {
 ?></b></p>
 
    <p>Seja bem-vindo(a) à central de suporte da SysCoin.</p>
-   <p><a href="https://syscoin.zendesk.com/hc/pt-br/requests/new" target="_blank">Abrir Chamado de Suporte</a> | <a href="https://syscoin.zendesk.com/hc/pt-br" target="_blank">Base de Conhecimento</a><br>
-    <a href="http://syscoin.com.br/minha-conta/" target="_blank">Financeiro</a></p>
+   <p><a href="https://syscoin.zendesk.com/hc/pt-br/requests/new" target="_blank">Abrir Chamado de Suporte</a> | <a href="https://syscoin.zendesk.com/hc/pt-br" target="_blank">Base de Conhecimento</a></p>
     <br>
-    <h4>Gerente de Conta</h4>
-    <p>Seu gerente de conta é o <b>Tiago Tavares</b></p>
-    <p>(61) 9561-1549</p>
-    <p>tiago@syscoin.com.br</p>
-   <br>
    <h4>Fale Conosco</h4>
    <p><b>Email: </b>atendimento@syscoin.com.br</p>
-   <p><b>WhatsApp:</b> (61) 8179-7716 | <b>Tel:</b> (61) 4042-0082</p>
+   <p><b>Tel:</b> (61) 4042-0082 | <b>Chat Online:</b> <a href="http://syscoin.com.br">Visitar</a></p>
    <br>
    <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -151,4 +130,11 @@ function wpc_disable_yoast_notifications() {
     remove_action('admin_notices', array(Yoast_Notification_Center::get(), 'display_notifications'));
     remove_action('all_admin_notices', array(Yoast_Notification_Center::get(), 'display_notifications'));
   }
+}
+
+// Remover Ícone Wordpress Barra
+
+add_action('admin_bar_menu', 'remove_wp_logo', 999);
+function remove_wp_logo( $wp_admin_bar ) {
+$wp_admin_bar->remove_node('wp-logo');
 }
