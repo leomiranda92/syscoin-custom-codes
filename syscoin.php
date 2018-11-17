@@ -60,6 +60,13 @@ function wptutsplus_add_dashboard_widgets() {
 }
 
 function wptutsplus_add_links_widget() { ?>
+
+  <!-- Form do Service Desk -->
+
+  <script data-jsd-embedded data-key="1a4120ae-0a28-410b-8465-27a8c60f239f" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+
+  <!-- fim -->
+  
   <img src="http://syscoin.com.br/wp-content/uploads/2014/06/SysCoin_Site.png" style="float: right; margin-top: -30px;"/>
 
 <p>Olá, <b><?php
