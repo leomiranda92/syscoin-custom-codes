@@ -10,7 +10,13 @@
 */
 
 
-// GOOGLE ANALYTICS BI
+// SCRIPTS DE SUPORTE:
+
+add_action('admin_footer', 'my_admin_add_js');
+function my_admin_add_js() {
+	echo '<script data-jsd-embedded data-key="1a4120ae-0a28-410b-8465-27a8c60f239f" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+  <script src="//code.tidio.co/otqa1xjsfzsfzz1dgalbfuyroyghijhr.js"></script>';
+}
 
 
 
@@ -61,11 +67,6 @@ function wptutsplus_add_dashboard_widgets() {
 
 function wptutsplus_add_links_widget() { ?>
 
-  <!-- Form do Service Desk -->
-
-<script data-jsd-embedded data-key="1a4120ae-0a28-410b-8465-27a8c60f239f" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
-<script src="//code.tidio.co/otqa1xjsfzsfzz1dgalbfuyroyghijhr.js"></script>
-  <!-- fim -->
 
 
 <p>Olá, <b><?php
@@ -76,11 +77,11 @@ if ( isset($current_user) ) {
 ?></b></p>
 
    <p>Seja bem-vindo(a) à central de suporte da SysCoin.</p>
-   <p><a href="https://syscoin.zendesk.com/hc/pt-br/requests/new" target="_blank">Abrir Chamado de Suporte</a> | <a href="https://syscoin.zendesk.com/hc/pt-br" target="_blank">Base de Conhecimento</a></p>
+   <p><a href="https://syscoin.atlassian.net/servicedesk/customer/portal/3/group/3/create/16" target="_blank" style="font-weight: bold;">Abrir Chamado de Suporte</b></a> | <a href="https://syscoin.atlassian.net/servicedesk/" target="_blank" style="font-weight: bold;"><b>Base de Conhecimento</b></a></p>
     <br>
    <h4>Fale Conosco</h4>
    <p><b>Email: </b>atendimento@syscoin.com.br</p>
-   <p><b>Tel:</b> (61) 4042-0082 | <b>Chat Online:</b> <a href="http://syscoin.com.br">Visitar</a></p>
+   <p><b>Tel:</b> (61) 3968-1540 | <b>Chat Online:</b> <a href="https://www.tidiochat.com/chat/otqa1xjsfzsfzz1dgalbfuyroyghijhr">Visitar</a></p>
    <br>
    <div id="fb-root"></div>
 <script>(function(d, s, id) {
