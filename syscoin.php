@@ -26,7 +26,7 @@ function my_admin_add_js() {
 
 // Add inline CSS in the admin head with the style tag
 function my_custom_admin_head() {
-	echo '<style>#jvlabelWrap{margin-right: 0px !important;} #jsd-widget{bottom: 50px !important;}</style>';
+	echo '<style>#jvlabelWrap{margin-right: 50px !important;} #jsd-widget{bottom: 50px !important;}</style>';
 }
 add_action( 'admin_head', 'my_custom_admin_head' );
 
