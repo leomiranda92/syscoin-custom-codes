@@ -3,7 +3,7 @@
 * Plugin Name: SysCoin Custom Code
 * Plugin URI: http://syscoin.com.br
 * Description: Códigos de Personalização
-* Version: 1.0
+* Version: 3.0
 * Author: Leonardo Miranda
 * Author URI: Site
 * License: A "Slug" license name e.g. GPL12
@@ -15,8 +15,21 @@
 add_action('admin_footer', 'my_admin_add_js');
 function my_admin_add_js() {
 	echo '<script data-jsd-embedded data-key="1a4120ae-0a28-410b-8465-27a8c60f239f" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
-  <script src="//code.tidio.co/otqa1xjsfzsfzz1dgalbfuyroyghijhr.js"></script>';
+	<script type="text/javascript">
+	(function(){ var widget_id = "MqBnPgqI6l";var d=document;var w=window;function l(){var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;s.src = "//code.jivosite.com/script/widget/"+widget_id; var ss = document.getElementsByTagName("script")[0]; ss.parentNode.insertBefore(s, ss);}if(d.readyState=="complete"){l();}else{if(w.attachEvent){w.attachEvent("onload",l);}else{w.addEventListener("load",l,false);}}})();
+	</script>
+';
 }
+
+
+// CSS do Chat Online
+
+// Add inline CSS in the admin head with the style tag
+function my_custom_admin_head() {
+	echo '<style>#jvlabelWrap{margin-right: 0px !important;} #jsd-widget{bottom: 50px !important;}</style>';
+}
+add_action( 'admin_head', 'my_custom_admin_head' );
+
 
 
 
@@ -77,7 +90,7 @@ if ( isset($current_user) ) {
 ?></b></p>
 
    <p>Seja bem-vindo(a) à central de suporte da SysCoin.</p>
-   <p><a href="https://syscoin.atlassian.net/servicedesk/customer/portal/3/group/3/create/16" target="_blank" style="font-weight: bold;">Abrir Chamado de Suporte</b></a> | <a href="https://syscoin.atlassian.net/servicedesk/" target="_blank" style="font-weight: bold;"><b>Base de Conhecimento</b></a></p>
+   <p><a href="https://syscoin.atlassian.net/servicedesk/customer/portal/3/group/3/create/16" target="_blank"><b>Abrir Chamado de Suporte</b></a> | <a href="https://syscoin.atlassian.net/servicedesk/" target="_blank"><b>Base de Conhecimento</b></a></p>
     <br>
    <h4>Fale Conosco</h4>
    <p><b>Email: </b>atendimento@syscoin.com.br</p>
