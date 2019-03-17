@@ -123,8 +123,6 @@ function remove_admin_bar_links() {
 }
 add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 
-
-
 // REMOVER ÍCONE DO MULTISITE - MEUS SITES
 
 function remove_wplogo_mysites() {
